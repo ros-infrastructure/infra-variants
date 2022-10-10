@@ -1,0 +1,13 @@
+Section: misc
+Priority: optional
+Homepage: https://github.com/ros-infrastructure/infra-variants
+Standards-Version: 3.9.2
+
+Package: ros-build-essential
+Version: 1.0.0
+Maintainer: Steven! Ragnarök
+Depends: build-essential, cmake, git, python3
+Architecture: all
+Copyright: copyright
+Readme: README.md
+Description: ROS Infrastructure variant including packages that are expected to be present when building any ROS packages.
