@@ -1,0 +1,13 @@
+Section: misc
+Priority: optional
+Homepage: https://github.com/ros-infrastructure/infra-variants
+Standards-Version: 3.9.2
+
+Package: ros-dev-tools
+Version: 1.0.0
+Maintainer: Steven! Ragnarök
+Depends: ros-build-essential, python3-bloom, python3-colcon-common-extensions, python3-rosdep, python3-vcstool
+Architecture: all
+Copyright: copyright
+Readme: README.md
+Description: ROS Infrastructure variant including packages generally useful during ROS development.
