@@ -1,0 +1,33 @@
+name: Build Variants
+
+on:
+  push:
+    branches: ["latest"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-ros-dev-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Earthly
+        run: |
+          sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
+          sudo chmod 755 /usr/local/bin/earthly
+      - name: Build ros-dev-tools deb
+        run: earthly +ros-dev-tools-deb
+      - name: Build ros-dev-tools rpm
+        run: earthly +ros-dev-tools-rpm
+  build-ros-build-essential:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Earthly
+        run: |
+          sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
+          sudo chmod 755 /usr/local/bin/earthly
+      - name: Build ros-build-essential deb
+        run: earthly +ros-build-essential-deb
+      - name: Build ros-build-essential rpm
+        run: earthly +ros-build-essential-rpm
