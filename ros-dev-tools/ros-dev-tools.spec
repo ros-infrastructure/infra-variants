@@ -1,7 +1,7 @@
 Name: ros-dev-tools
 Version: 1.0
 Summary: ROS Infrastructure variant including packages generally useful during ROS development.
-Release: %{?dist}%{?release_suffix}
+Release: 1%{?dist}%{?release_suffix}
 BuildArch: noarch
 License: Apache-2.0
 URL: https://github.com/ros-infrastructure/infra-variants
