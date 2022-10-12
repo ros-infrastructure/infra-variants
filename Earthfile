@@ -37,3 +37,5 @@ ros-dev-tools-deb:
 ros-build-essential-deb:
   DO +DEB --package=ros-build-essential
 
+ros-build-essential-rpm:
+  DO +RPM --package=ros-build-essential
