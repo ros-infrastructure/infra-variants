@@ -17,8 +17,8 @@ jobs:
           sudo chmod 755 /usr/local/bin/earthly
       - name: Build ros-dev-tools deb
         run: earthly +ros-dev-tools-deb
-      # - name: Build ros-dev-tools rpm
-      #   run: earthly +ros-dev-tools-rpm
+      - name: Build ros-dev-tools rpm
+        run: earthly +ros-dev-tools-rpm
   build-ros-build-essential:
     runs-on: ubuntu-latest
     steps:
@@ -29,5 +29,5 @@ jobs:
           sudo chmod 755 /usr/local/bin/earthly
       - name: Build ros-build-essential deb
         run: earthly +ros-build-essential-deb
-      # - name: Build ros-build-essential rpm
-      #   run: earthly +ros-build-essential-rpm
+      - name: Build ros-build-essential rpm
+        run: earthly +ros-build-essential-rpm
