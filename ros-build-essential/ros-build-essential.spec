@@ -9,7 +9,7 @@ Source0: README.md
 Source1: copyright
 
 # TODO add packages from mock's default configuration.
-Requires: cmake, g++, git, make, python3
+Requires: cmake, gcc-c++, git, make, python3
 
 %description
 ROS Infrastructure variant including packages that are expected to be present
