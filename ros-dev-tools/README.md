@@ -8,4 +8,4 @@
 * [rosdep](https://github.com/ros-infrastructure/rosdep)
 * [colcon-common-extensions](https://github.com/colcon/colcon-common-extensions)
 * [bloom](https://github.com/ros-infrastructure/bloom)
-* [vcs](https://github.com/dirk-thomas/vcstool)
+* [vcstool](https://github.com/dirk-thomas/vcstool)
