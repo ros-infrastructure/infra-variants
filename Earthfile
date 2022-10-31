@@ -16,8 +16,9 @@ RPM:
   COPY $package /tmp/$package
   WORKDIR /tmp/$package
   RUN rpmbuild -ba ${package}.spec --define "_topdir /tmp/$package/rpm" --define "_sourcedir /tmp/$package"
-  RUN rpmlint /tmp/$package/rpm/RPMS/noarch/${package}*.rpm
+  RUN rpmlint /tmp/$package/rpm/RPMS/noarch/${package}*.rpm /tmp/$package/rpm/SRPMS/${package}*.src.rpm
   SAVE ARTIFACT /tmp/$package/rpm/RPMS/noarch/${package}*.rpm AS LOCAL output/
+  SAVE ARTIFACT /tmp/$package/rpm/SRPMS/${package}*.src.rpm AS LOCAL output/
 
 DEB:
   COMMAND
