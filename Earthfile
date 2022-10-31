@@ -60,7 +60,8 @@ check-debs:
 
 check-rpms:
   FROM almalinux:8
-  COPY +ros-build-essential-rpm/ros-build-essential*.rpm ./
-  RUN dnf install *.rpm
-  COPY +ros-dev-tools-rpm/ros-dev-tools*.rpm ./
-  RUN dnf install *.rpm
+  RUN dnf install -y dnf-command\(config-manager\) && dnf config-manager --set-enabled powertools && dnf install -y epel-release
+  COPY +ros-build-essential-rpm/ros-build-essential*.noarch.rpm ./
+  RUN dnf install -y *.rpm
+  COPY +ros-dev-tools-rpm/ros-dev-tools*.noarch.rpm ./
+  RUN dnf install -y *.rpm
