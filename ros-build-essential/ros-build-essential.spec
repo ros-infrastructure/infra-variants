@@ -14,10 +14,12 @@ Requires: cmake, g++, git, make, python3
 %description
 ROS Infrastructure variant including packages that are expected to be present when building any ROS packages.
 
+%prep
+cp -a %{SOURCE0} %{SOURCE1} .
 
 %files
-%doc %{SOURCE0}
-%license %{SOURCE1}
+%doc README.md
+%license copyright
 
 %changelog
 * Mon Oct 10 2022 Steven! Ragnarök - 1.0.0
