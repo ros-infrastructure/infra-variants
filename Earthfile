@@ -13,11 +13,10 @@ RPM:
   COMMAND
   ARG package
   FROM +rpmbuild
-  RUN echo "!!! WARNING THIS DOESN'T WORK YET !!!"
   COPY $package /tmp/$package
   WORKDIR /tmp/$package
-  RUN rpmbuild -ba ${package}.spec
-  SAVE ARTIFACT ${package}*.rpm AS LOCAL output/
+  RUN rpmbuild -ba ${package}.spec --define "_topdir /tmp/$package/rpm" --define "_sourcedir /tmp/$package"
+  SAVE ARTIFACT /tmp/$package/rpm/RPMS/noarch/${package}*.rpm AS LOCAL output/
 
 DEB:
   COMMAND
