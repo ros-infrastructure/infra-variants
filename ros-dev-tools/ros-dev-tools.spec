@@ -12,9 +12,12 @@ Requires: ros-build-essential, python3-bloom, python3-colcon-common-extensions, 
 %description
 ROS Infrastructure variant including packages generally useful during ROS development.
 
+%prep
+cp -a %{SOURCE0} %{SOURCE1} .
+
 %files
-%doc %{SOURCE0}
-%license %{SOURCE1}
+%doc README.md
+%license copyright
 
 %changelog
 * Mon Oct 10 2022 Steven! Ragnarök - 1.0.0
