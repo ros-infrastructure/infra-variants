@@ -3,11 +3,11 @@ VERSION 0.6
 equivs:
   FROM ubuntu:jammy
   RUN apt-get update
-  RUN apt-get install -y equivs
+  RUN apt-get install -y equivs lintian
 
 rpmbuild:
   FROM almalinux:8
-  RUN dnf install -y rpmdevtools
+  RUN dnf install -y rpmdevtools rpmlint
 
 RPM:
   COMMAND
@@ -16,6 +16,7 @@ RPM:
   COPY $package /tmp/$package
   WORKDIR /tmp/$package
   RUN rpmbuild -ba ${package}.spec --define "_topdir /tmp/$package/rpm" --define "_sourcedir /tmp/$package"
+  RUN rpmlint /tmp/$package/rpm/RPMS/noarch/${package}*.rpm
   SAVE ARTIFACT /tmp/$package/rpm/RPMS/noarch/${package}*.rpm AS LOCAL output/
 
 DEB:
@@ -25,6 +26,7 @@ DEB:
   COPY $package /tmp/$package
   WORKDIR /tmp/$package
   RUN equivs-build ${package}.control
+  RUN lintian ${package}_*.deb
   SAVE ARTIFACT ${package}_*.deb AS LOCAL output/
 
 ros-dev-tools-rpm:
