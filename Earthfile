@@ -41,3 +41,26 @@ ros-build-essential-deb:
 
 ros-build-essential-rpm:
   DO +RPM --package=ros-build-essential
+
+check-debs:
+  FROM ubuntu:jammy
+  ARG DEBIAN_FRONTEND=noninteractive
+  RUN apt update && apt install -y curl gnupg2
+  RUN echo 'deb http://packages.ros.org/ros2/ubuntu jammy main' > /etc/apt/sources.list.d/ros2.list
+  RUN curl 'https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc' | apt-key add -
+  RUN apt update
+  COPY +ros-build-essential-deb/ros-build-essential*.deb ./
+  RUN dpkg -i *.deb || true
+  RUN apt install -yf
+  RUN dpkg -i *.deb
+  COPY +ros-dev-tools-deb/ros-dev-tools*.deb ./
+  RUN dpkg -i *.deb || true
+  RUN apt install -yf
+  RUN dpkg -i *.deb
+
+check-rpms:
+  FROM almalinux:8
+  COPY +ros-build-essential-rpm/ros-build-essential*.rpm ./
+  RUN dnf install *.rpm
+  COPY +ros-dev-tools-rpm/ros-dev-tools*.rpm ./
+  RUN dnf install *.rpm
