@@ -1,5 +1,5 @@
 Name: ros-dev-tools
-Version: 1.0
+Version: 1.0.0
 Summary: Developer Tools for ROS
 Release: 1%{?dist}%{?release_suffix}
 BuildArch: noarch
