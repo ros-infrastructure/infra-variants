@@ -31,3 +31,25 @@ jobs:
         run: earthly +ros-build-essential-deb
       - name: Build ros-build-essential rpm
         run: earthly +ros-build-essential-rpm
+  check-rpms:
+    runs-on: ubuntu-latest
+    needs: [build-ros-build-essential, build-ros-dev-tools]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Earthly
+        run: |
+          sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
+          sudo chmod 755 /usr/local/bin/earthly
+      - name: Check RPM installation
+        run: earthly +check-rpms
+  check-debs:
+    runs-on: ubuntu-latest
+    needs: [build-ros-build-essential, build-ros-dev-tools]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Earthly
+        run: |
+          sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
+          sudo chmod 755 /usr/local/bin/earthly
+      - name: Check deb installation
+        run: earthly +check-debs
