@@ -11,5 +11,5 @@ Architecture: all
 Copyright: copyright
 Readme: README.md
 Description: Packages expected when building any ROS package
- ROS Infrastructure variant including packages that are expected to be present
- when building any ROS packages.
+ Variant which includes packages that are expected to be present when building
+ any ROS packages.

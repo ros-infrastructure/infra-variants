@@ -10,8 +10,7 @@ Source1: copyright
 Requires: ros-build-essential, python3-bloom, python3-colcon-common-extensions, python3-rosdep, python3-vcstool, wget
 
 %description
-ROS Infrastructure variant including packages generally useful during ROS
-development.
+Variant which includes packages generally useful during ROS development.
 
 %prep
 cp -a %{SOURCE0} %{SOURCE1} .
