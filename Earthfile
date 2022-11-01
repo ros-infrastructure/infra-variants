@@ -1,7 +1,7 @@
 VERSION 0.6
 
 equivs:
-  FROM ubuntu:bionic
+  FROM debian:bullseye
   RUN apt-get update
   RUN apt-get install -y equivs lintian
 
