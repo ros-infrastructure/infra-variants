@@ -13,8 +13,8 @@ Source1: copyright
 Requires: bash, bzip2, coreutils, cpio, diffutils, findutils, gawk, gcc, gcc-c++, grep, gzip, info, make, patch, redhat-release, redhat-rpm-config, rpm-build, sed, shadow-utils, tar, unzip, util-linux, which, xz, cmake, gcc-c++, git, python3
 
 %description
-ROS Infrastructure variant including packages that are expected to be present
-when building any ROS packages.
+Variant which includes packages that are expected to be present when building
+any ROS packages.
 
 %prep
 cp -a %{SOURCE0} %{SOURCE1} .

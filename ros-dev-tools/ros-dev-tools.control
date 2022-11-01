@@ -11,5 +11,4 @@ Architecture: all
 Copyright: copyright
 Readme: README.md
 Description: Developer Tools for ROS
- ROS Infrastructure variant including packages generally useful during ROS
- development.
+ Variant which includes packages generally useful during ROS development.
