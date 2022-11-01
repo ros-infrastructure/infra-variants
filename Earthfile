@@ -26,9 +26,11 @@ DEB:
   FROM +equivs
   COPY $package /tmp/$package
   WORKDIR /tmp/$package
-  RUN equivs-build ${package}.control
+  RUN equivs-build --full ${package}.control
   RUN lintian --suppress-tags empty-binary-package ${package}_*.deb
   SAVE ARTIFACT ${package}_*.deb AS LOCAL output/
+  SAVE ARTIFACT ${package}_*.dsc AS LOCAL output/
+  SAVE ARTIFACT ${package}_*.tar.xz AS LOCAL output/
 
 ros-dev-tools-rpm:
   DO +RPM --package=ros-dev-tools
