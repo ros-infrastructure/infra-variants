@@ -16,6 +16,10 @@ development.
 %prep
 cp -a %{SOURCE0} %{SOURCE1} .
 
+%build
+
+%install
+
 %files
 %doc README.md
 %license copyright
