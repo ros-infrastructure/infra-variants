@@ -6,7 +6,12 @@ Standards-Version: 3.9.2
 Package: ros-build-essential
 Version: 1.0.0
 Maintainer: Steven! Ragnarök <steven@openrobotics.org>
-Depends: build-essential, cmake, git, python3, python3-setuptools
+Depends:
+ build-essential,
+ cmake,
+ git,
+ python3,
+ python3-setuptools
 Architecture: all
 Copyright: copyright
 Readme: README.md
