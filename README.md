@@ -7,3 +7,9 @@ Currently there are two variants used for ROS Infrastructure.
 [`ros-build-essential`](./ros-build-essential) contains the base set of packages to be present when building any ROS package on the build farm.
 
 [`ros-dev-tools`](./ros-dev-tools) contains packages that are of general use to ROS developers but which are not dependencies of any particular packages within a ROS distribution.
+
+These packages are published to the following distributions via the ROS bootstrap repositories:
+
+* Debian: bullseye
+* Ubuntu: focal, jammy
+* RHEL: 8
