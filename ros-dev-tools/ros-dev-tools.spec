@@ -10,6 +10,7 @@ Source1: copyright
 Requires: ros-build-essential
 Requires: python3-bloom
 Requires: python3-colcon-common-extensions
+Requires: python3-colcon-mixin
 Requires: python3-rosdep
 Requires: python3-vcstool
 Requires: wget
