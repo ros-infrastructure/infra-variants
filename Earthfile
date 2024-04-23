@@ -50,6 +50,7 @@ check-debs:
   RUN apt update && apt install -y curl gnupg2
   RUN echo 'deb http://packages.ros.org/ros2/ubuntu jammy main' > /etc/apt/sources.list.d/ros2.list
   RUN curl 'https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc' | apt-key add -
+  RUN echo 'Package: ros-build-essential ros-dev-tools\nPin: release n=jammy\nPin-Priority: 50' > /etc/apt/preferences.d/priority-ros2
   RUN apt update
   COPY +ros-build-essential-deb/ros-build-essential*.deb ./
   RUN dpkg -i *.deb || true
