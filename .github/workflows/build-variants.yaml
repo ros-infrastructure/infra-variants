@@ -11,7 +11,7 @@ jobs:
   build-ros-dev-tools:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Earthly
         run: |
           sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
@@ -23,7 +23,7 @@ jobs:
   build-ros-build-essential:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Earthly
         run: |
           sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-ros-build-essential, build-ros-dev-tools]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Earthly
         run: |
           sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-ros-build-essential, build-ros-dev-tools]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Earthly
         run: |
           sudo wget 'https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64' -O /usr/local/bin/earthly
