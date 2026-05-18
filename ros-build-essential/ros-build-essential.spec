@@ -1,5 +1,5 @@
 Name: ros-build-essential
-Version: 1.0.1
+Version: 1.0.2
 Summary: Packages expected when building any ROS package
 Release: 1%{?dist}%{?release_suffix}
 BuildArch: noarch
@@ -57,6 +57,9 @@ cp -a %{SOURCE0} %{SOURCE1} .
 %license copyright
 
 %changelog
+* Fri May 15 2026 Scott K Logan - 1.0.2-1
+- Drop python3-bloom from ros-dev-tools variant
+
 * Tue Apr 23 2024 Scott K Logan - 1.0.1-1
 - Add python3-colcon-mixin to ros-dev-tools variant
 
