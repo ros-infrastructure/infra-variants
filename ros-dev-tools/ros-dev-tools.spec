@@ -1,5 +1,5 @@
 Name: ros-dev-tools
-Version: 1.0.2
+Version: 1.0.3
 Summary: Developer Tools for ROS
 Release: 1%{?dist}%{?release_suffix}
 BuildArch: noarch
@@ -31,6 +31,9 @@ cp -a %{SOURCE0} %{SOURCE1} .
 %license copyright
 
 %changelog
+* Thu Sep 10 2026 Scott K Logan - 1.0.3-1
+- Switch from redhat-release to system-release in ros-build-essential
+
 * Fri May 15 2026 Scott K Logan - 1.0.2-1
 - Drop python3-bloom from ros-dev-tools variant
 

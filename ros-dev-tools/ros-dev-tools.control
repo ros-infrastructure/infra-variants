@@ -4,7 +4,7 @@ Homepage: https://github.com/ros-infrastructure/infra-variants
 Standards-Version: 3.9.2
 
 Package: ros-dev-tools
-Version: 1.0.2
+Version: 1.0.3
 Maintainer: Steven! Ragnarök <steven@openrobotics.org>
 Depends:
  ros-build-essential,

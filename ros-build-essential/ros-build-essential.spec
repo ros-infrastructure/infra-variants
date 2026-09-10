@@ -1,5 +1,5 @@
 Name: ros-build-essential
-Version: 1.0.2
+Version: 1.0.3
 Summary: Packages expected when building any ROS package
 Release: 1%{?dist}%{?release_suffix}
 BuildArch: noarch
@@ -24,11 +24,11 @@ Requires: gzip
 Requires: info
 Requires: make
 Requires: patch
-Requires: redhat-release
 Requires: redhat-rpm-config
 Requires: rpm-build
 Requires: sed
 Requires: shadow-utils
+Requires: system-release
 Requires: tar
 Requires: unzip
 Requires: util-linux
@@ -57,6 +57,9 @@ cp -a %{SOURCE0} %{SOURCE1} .
 %license copyright
 
 %changelog
+* Thu Sep 10 2026 Scott K Logan - 1.0.3-1
+- Switch from redhat-release to system-release in ros-build-essential
+
 * Fri May 15 2026 Scott K Logan - 1.0.2-1
 - Drop python3-bloom from ros-dev-tools variant
 
